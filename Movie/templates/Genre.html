@@ -1,0 +1,21 @@
+{% block content %}
+<body>
+
+	<h1>HELLO</h1>
+
+	{% if request.user.is_authenticated %}
+	<h1>Hi {{ request.user.username|title }}</h1>
+	{% else %}
+		<p>WELCOME!!</p>
+	{% endif %}
+	
+	<h2>GENRES</h2>
+	<p>{{ genre.count }} GENRES</p>
+	
+	{% for genre in genre %}
+	<p>GENRES : {{ genre.Type }} </p>
+	
+	{% endfor %}
+
+</body>
+{% endblock %}

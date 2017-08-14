@@ -14,7 +14,7 @@ from .models import Film, Actor, Genre
 #	return obj.list_genre()
 
 	
-list_display = ("Title","Description","Year","Actor","Type")
+#list_display = ("Title","Description","Year","Actor","Type")
 
 
 @admin.register(Film)

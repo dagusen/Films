@@ -1,23 +1,24 @@
+{% extends 'Actor.html' %}
+
 {% block content %}
 <body>
 
 	<h1>HELLO</h1>
 
 	{% if request.user.is_authenticated %}
-	<h1>Hi {{ request.user.username|title }}</h1>
+		<h1>Hi {{ request.user.username|title }}</h1>
 	{% else %}
 		<p>WELCOME!!</p>
 	{% endif %}
 	
-	<h2>FILMs</h2>
+	<h2>FILMS</h2>
 	<p>{{ film.count }} Films</p>
 	
 	{% for film in film %}
-	<p>Title : {{ film.Title }} </p>
-	<p>Description : {{ film.Description }} </p>
-	<p>Year : {{ film.Year }} </p>
-	<p>Actor : {{ actor.Actor_name }} </p>
-	
+		<p>Title : {{ film.Title }} </p>
+		<p>Description : {{ film.Description }} </p>
+		<p>Year : {{ film.Year }} </p>
+		<p>Actor : {{ film.list_actor.Actor_name }} </p>
 	{% endfor %}
 
 </body>

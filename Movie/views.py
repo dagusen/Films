@@ -7,8 +7,12 @@ from django.views.generic import View
 class FilmList(View):
 	def get(self, request):
 		film = Film.objects.all()
+		actor = Actor.objects.all()
+		genre = Genre.objects.all()
 		context = {
 		'film': film,
+		'actor': actor,
+		'genre': genre,
 		}
 		return render(request, "Film.html", context)
 

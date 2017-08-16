@@ -18,8 +18,14 @@
 		<p>Title : {{ film.Title }} </p>
 		<p>Description : {{ film.Description }} </p>
 		<p>Year : {{ film.Year }} </p>
-		<p>Actor : {{ film.list_actor.Actor_name }} </p>
+		{% for actor in actor %}
+			<p>Actor : {{ actor.Actor_name }} </p>
+		{% endfor %}
+		{% for genre in genre %}
+			<p>Genre : {{ genre.Type }} </p>
+		{% endfor %}
 	{% endfor %}
+		
 
 </body>
 {% endblock %}

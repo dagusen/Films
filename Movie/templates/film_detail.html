@@ -1,0 +1,17 @@
+<body>
+
+	<!-- <h1>{{ object.headline }}</h1> -->
+	<!-- <p>{{ object.content }}</p> -->
+	<p>Title: {{ object.Title }}</p>
+	<p>Decription : {{ object.Description }}</p>
+	<p>Published date : {{ object.Year }}</p>
+
+	{% for actor in film.actor.all %}
+		<p>Actor : {{ actor.Actor_name }} </p>
+	{% endfor%}
+		<p> </p>
+	{% for genre in film.genre.all %}
+		 <p>Genre : {{ genre.Type }}</p> 
+	{% endfor %}
+
+</body>

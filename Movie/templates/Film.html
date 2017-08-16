@@ -1,13 +1,10 @@
-{% extends 'Actor.html' %}
 {% block content %}
 <body>
-
-	<h1>HELLO</h1>
 
 	{% if request.user.is_authenticated %}
 		<h1>Hi {{ request.user.username|title }}</h1>
 	{% else %}
-		<p>WELCOME!!</p>
+		<p>Please Login</p>
 	{% endif %}
 	
 	<h2>FILMS</h2>

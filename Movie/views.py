@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.utils import timezone
 from .models import Film, Actor, Genre
-from django.views.generic import View
+from django.views.generic import View, DetailView, ListView
 # Create your views here.
 
 class FilmList(View):
@@ -31,3 +31,26 @@ class GenreList(View):
 		'genre': genre,
 		}
 		return render(request, "Genre.html", context)
+
+# Film Detail View
+
+class FilmDetailView(DetailView):
+
+    model = Film
+    template_name = "film_detail.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(FilmDetailView, self).get_context_data(**kwargs)
+        context['now'] = timezone.now()
+        return context
+
+# Film List View
+# class FilmListView(ListView):
+
+    # model = Film
+    # template_name = "film_List.html"
+
+    # def get_context_data(self, **kwargs):
+        # context = super(FilmListView, self).get_context_data(**kwargs)
+        # context['now'] = timezone.now()
+        # return context

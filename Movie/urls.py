@@ -15,10 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url
 from . import views
-from .views import FilmList, ActorList, GenreList
+from .views import FilmList, ActorList, GenreList, FilmDetailView#, FilmListView
 
 urlpatterns = [
     url(r'^Film/$', FilmList.as_view(), name='film'),
     url(r'^Actor/$', ActorList.as_view(), name='actor'),
     url(r'^Genre/$', GenreList.as_view(), name='genre'),
+    url(r'^Film/(?P<pk>[-\w]+)/$', FilmDetailView.as_view(), name='film-detail'),
 ]
